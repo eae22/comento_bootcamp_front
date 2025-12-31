@@ -1,0 +1,48 @@
+.web_title_layout {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.web_title {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.photo_name_layout,
+.block_layout {
+  margin: 30px 40px;
+}
+
+.photo_name_layout {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.profile_photo {
+  width: 300px;
+  border-radius: 10px;
+}
+
+.photo_name_layout h4 {
+  margin: 0;
+}
+
+.block_layout {
+  padding: 20px 40px;
+  border: 2px solid #a4d6bb;
+  border-radius: 10px;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.interest_detail_layout {
+  display: flex;
+  gap: 50px;
+  justify-content: space-around;
+  margin-top: 20px;
+}
