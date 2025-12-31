@@ -19,9 +19,151 @@
   align-items: center;
 }
 
+.flip-card {
+  width: 300px;
+  height: 420px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+}
+
+.flip-card-front {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .profile_photo {
   width: 300px;
   border-radius: 10px;
+}
+
+.click_hint {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #6b7280;
+  text-align: center;
+}
+
+.flip-card-back {
+  width: 300px;
+  transform: rotateY(180deg);
+  background-color: #ebebeb;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(-180deg);
+}
+
+.tooltip_wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.major {
+  display: inline-block;
+  cursor: pointer;
+  animation: hintPulse 2.5s ease-in-out infinite;
+}
+
+@keyframes hintPulse {
+  0% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #99c4aa;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+.major:hover {
+  animation: none;
+}
+
+.tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 80%;
+  transform: translateX(-50%) translateY(5px);
+
+  background-color: #588d6d;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 14px;
+  white-space: nowrap;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 30%;
+  transform: translateX(-50%);
+
+  border-width: 6px;
+  border-style: solid;
+  border-color: #588d6d transparent transparent transparent;
+}
+
+.tooltip_wrapper:hover .tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.mbti-text {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.github_layout {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+}
+
+.github_icon {
+  width: 65px;
+  vertical-align: middle;
+}
+
+.github_link {
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.github_id_text {
+  font-size: 15px;
+  font-weight: bold;
+  margin-left: 10px;
 }
 
 .photo_name_layout h4 {
@@ -35,7 +177,7 @@
 }
 
 .subtitle {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   margin: 10px 0;
 }
@@ -45,4 +187,13 @@
   gap: 50px;
   justify-content: space-around;
   margin-top: 20px;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  font-size: 0.75em;
+  cursor: pointer;
+  padding: 2px;
+  padding-top: 1px;
 }
