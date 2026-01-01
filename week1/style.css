@@ -4,13 +4,20 @@
 }
 
 .web_title {
-  font-size: 50px;
+  font-size: 40px;
   font-weight: bold;
+  color: #175415;
+}
+
+.flip-card_block_layout {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
 }
 
 .photo_name_layout,
 .block_layout {
-  margin: 30px 40px;
+  margin: 0 40px;
 }
 
 .photo_name_layout {
@@ -63,6 +70,7 @@
 
 .flip-card-back {
   width: 300px;
+  height: 400px;
   transform: rotateY(180deg);
   background-color: #ebebeb;
   display: grid;
@@ -166,8 +174,17 @@
   margin-left: 10px;
 }
 
+.github_layout:hover .github_id_text {
+  color: #248b21;
+}
+
 .photo_name_layout h4 {
   margin: 0;
+}
+
+.content_area {
+  max-width: 800px;
+  max-height: 800px;
 }
 
 .block_layout {
@@ -196,4 +213,44 @@
   cursor: pointer;
   padding: 2px;
   padding-top: 1px;
+}
+
+.page {
+  display: none;
+  width: 100%;
+  width: 700px;
+  border-left: #2b712869 2px dashed;
+}
+
+.page.active {
+  display: grid;
+  gap: 20px;
+}
+
+.page_nav {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.btn_page_nav {
+  padding: 8px 11px;
+  border: none;
+  border-radius: 5px;
+  background-color: #257f22;
+  color: white;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.2s ease;
+}
+
+.btn_page_nav:hover {
+  opacity: 0.8;
+}
+
+.btn_page_nav.active {
+  opacity: 1;
+  background-color: #248b21;
+  box-shadow: 0 0 0 2px rgba(66, 184, 62, 0.3);
 }
