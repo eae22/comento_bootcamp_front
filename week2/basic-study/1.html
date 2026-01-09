@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>display 속성 예제</title>
+    <style>
+      .block-box {
+        display: block;
+        width: 200px;
+        height: 50px;
+        background-color: skyblue;
+        margin-bottom: 10px;
+      }
+
+      .inline-box {
+        display: inline;
+        width: 200px; /* 적용되지 않음 */
+        height: 50px; /* 적용되지 않음 */
+        background-color: pink;
+        margin-right: 10px;
+      }
+
+      .inline-block-box {
+        display: inline-block;
+        width: 120px;
+        height: 50px;
+        background-color: lightgreen;
+        margin-right: 10px;
+      }
+
+      .none-box {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>block 요소</h3>
+    <div class="block-box">Block 1</div>
+    <div class="block-box">Block 2</div>
+
+    <h3>inline 요소</h3>
+    <span class="inline-box">Inline 1</span>
+    <span class="inline-box">Inline 2</span>
+
+    <h3>inline-block 요소</h3>
+    <div class="inline-block-box">Inline-block 1</div>
+    <div class="inline-block-box">Inline-block 2</div>
+
+    <h3>display: none</h3>
+    <div class="none-box">이 요소는 보이지 않습니다</div>
+  </body>
+</html>
