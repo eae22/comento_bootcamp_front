@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project#1 시계</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1 class="page-title">Project#1 시계</h1>
+      <section class="widget">
+        <!-- 배터리 -->
+        <div class="battery-box">
+          <span>배터리 : </span>
+          <strong class="battery-text js-battery-text">100%</strong>
+        </div>
+        <!-- 추가 기능 -->
+        <section class="extra">
+          <button type="button" class="charge-btn js-charge-btn">배터리 충전(+20%)</button>
+        </section>
+        <div class="content">
+          <!-- 시간 -->
+          <section class="time-area">
+            <div class="label">시간</div>
+            <div class="screen clock-screen js-clock-screen">
+              <span class="clock-text js-clock-text">0000-00-00 00:00:00</span>
+            </div>
+          </section>
+          <!-- 알람 현황 -->
+          <section class="alarm-area">
+            <div class="label">알람 현황</div>
+            <div class="alarm-status-box">
+              <ol class="alarm-list js-alarm-list"></ol>
+            </div>
+          </section>
+        </div>
+        <!-- 알람 설정 -->
+        <section class="alarm-controls">
+          <div class="label">알람</div>
+          <div class="alarm-inputs">
+            <label class="unit">
+              <span class="unit-label">시</span>
+              <input class="alarm-hour js-alarm-hour" type="number" min="0" max="23" />
+            </label>
+            <label class="unit">
+              <span class="unit-label">분</span>
+              <input class="alarm-min js-alarm-min" type="number" min="0" max="59" />
+            </label>
+            <label class="unit">
+              <span class="unit-label">초</span>
+              <input class="alarm-sec js-alarm-sec" type="number" min="0" max="59" />
+            </label>
+            <button type="button" class="add-btn js-add-alarm">추가</button>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
