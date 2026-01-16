@@ -29,7 +29,7 @@ function renderHistory() {
 }
 
 function isNumberChar(ch) {
-  return (ch >= '0' && ch <= '9') || ch === '.';
+  return (ch >= '0' && ch <= '9') || ch === '.' || ch === '00';
 }
 
 function endsWithOperator(s) {
@@ -133,10 +133,6 @@ function equals() {
 
   expr = value === 'Infinity' ? '0' : value;
   render();
-}
-
-function isNumberChar(ch) {
-  return (ch >= '0' && ch <= '9') || ch === '.' || ch === '00';
 }
 
 $keypad.addEventListener('click', (e) => {
