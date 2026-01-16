@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project#2 계산기</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <h1 class="page-title">Project#2 계산기</h1>
+      <section class="calc">
+        <div class="display">
+          <div class="expr js-expr" aria-label="현재 입력">0</div>
+          <div class="result js-result" aria-label="결과"></div>
+        </div>
+        <!-- 연산 기록 -->
+        <section class="history">
+          <div class="history-head">
+            <span class="history-title">기록</span>
+            <button type="button" class="btn small js-clear-history">전체 기록 삭제</button>
+          </div>
+          <ol class="history-list js-history"></ol>
+        </section>
+        <div class="keypad js-keypad">
+          <!-- 1행: C CE / * -->
+          <button type="button" class="key control js-key" data-action="C">C</button>
+          <button type="button" class="key control js-key" data-action="CE">CE</button>
+          <button type="button" class="key op js-key" data-value="/">/</button>
+          <button type="button" class="key op js-key" data-value="*">*</button>
+          <!-- 2행: 7 8 9 - -->
+          <button type="button" class="key num js-key" data-value="7">7</button>
+          <button type="button" class="key num js-key" data-value="8">8</button>
+          <button type="button" class="key num js-key" data-value="9">9</button>
+          <button type="button" class="key op js-key" data-value="-">-</button>
+          <!-- 3행: 4 5 6 + -->
+          <button type="button" class="key num js-key" data-value="4">4</button>
+          <button type="button" class="key num js-key" data-value="5">5</button>
+          <button type="button" class="key num js-key" data-value="6">6</button>
+          <button type="button" class="key op js-key" data-value="+">+</button>
+          <!-- 4행: 1 2 3 = -->
+          <button type="button" class="key num js-key" data-value="1">1</button>
+          <button type="button" class="key num js-key" data-value="2">2</button>
+          <button type="button" class="key num js-key" data-value="3">3</button>
+          <button type="button" class="key equals js-key" data-action="=">=</button>
+          <!-- 5행: 0 . (빈칸) -->
+          <button type="button" class="key num zero js-key" data-value="0">0</button>
+          <button type="button" class="key num js-key" data-value=".">.</button>
+          <button type="button" class="key num js-key" data-value="00">00</button>
+        </div>
+      </section>
+    </main>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
