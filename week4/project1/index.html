@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project#1 To-Do-List</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <main class="app" aria-labelledby="app-title">
+      <header class="app__header">
+        <h1 id="app-title" class="app__title">Project#1 To-Do List</h1>
+        <p class="app__subtitle">일정을 추가하고 삭제할 수 있습니다.</p>
+      </header>
+      <!-- 일정 입력 영역 -->
+      <section class="card" aria-label="일정 입력">
+        <form class="todo-form js-todo-form" autocomplete="off">
+          <div class="todo-form__row">
+            <label for="todo-text" class="todo-form__label">일정</label>
+            <input
+              id="todo-text"
+              class="todo-form__input js-todo-input"
+              type="text"
+              placeholder="예: 과제 제출하기"
+              maxlength="50"
+              required
+            />
+            <button class="btn btn--primary js-add-btn" type="submit">추가</button>
+          </div>
+          <!-- 안내/에러 메시지 출력 영역 -->
+          <p class="form-msg js-form-msg"></p>
+        </form>
+      </section>
+      <!-- 일정 목록 영역 -->
+      <section class="card" aria-label="일정 목록">
+        <div class="card__head">
+          <h2 class="card__title">목록</h2>
+          <p class="card__meta">
+            전체 <span class="js-total-count">0</span>개 · 완료 <span class="js-done-count">0</span>개
+          </p>
+        </div>
+        <!-- 일정 리스트 -->
+        <ul class="todo-list js-todo-list" aria-label="일정 리스트">
+          <!-- JS에서 li 항목을 생성해서 추가 -->
+        </ul>
+        <!-- 일정 없을 때 문구 -->
+        <p class="empty js-empty" hidden>아직 일정이 없습니다. 일정을 추가해보세요.</p>
+      </section>
+    </main>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,230 @@
+/* 기본 초기화 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* 공통 변수 */
+:root {
+  --color-bg: #0b0b0b;
+  --color-surface: #121212;
+  --color-border: #2a2a2a;
+  --color-text: #eaeaea;
+  --color-muted: #a8a8a8;
+  --color-primary: #4f8cff;
+  --color-danger: #ff5a5a;
+
+  --radius: 14px;
+
+  --space-1: 6px;
+  --space-2: 10px;
+  --space-3: 14px;
+  --space-4: 18px;
+  --space-5: 24px;
+
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* 전체 레이아웃 */
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+.app {
+  width: min(720px, calc(100% - 32px));
+  margin: 40px auto;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.app__header {
+  display: grid;
+  gap: var(--space-1);
+}
+
+.app__title {
+  margin: 0;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+}
+
+.app__subtitle {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+/* 카드 */
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-5);
+  box-shadow: var(--shadow);
+}
+
+.card__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.card__title {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card__meta {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+/* 입력 폼 */
+.todo-form__row {
+  display: grid;
+  grid-template-columns: 72px 1fr auto;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.todo-form__label {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+.todo-form__input {
+  width: 100%;
+  padding: 12px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--color-text);
+  outline: none;
+}
+
+.todo-form__input:focus {
+  border-color: rgba(79, 140, 255, 0.9);
+  box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.15);
+}
+
+/* 안내/에러 메시지 */
+.form-msg {
+  margin: var(--space-2) 0 0;
+  min-height: 20px;
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.form-msg--error {
+  color: var(--color-danger);
+}
+
+/* 버튼 */
+.btn {
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--color-text);
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.btn--primary {
+  border-color: rgba(79, 140, 255, 0.55);
+  background: rgba(79, 140, 255, 0.18);
+}
+
+.btn--danger {
+  border-color: rgba(255, 90, 90, 0.6);
+  background: rgba(255, 90, 90, 0.12);
+}
+
+/* 리스트 */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: var(--space-2);
+}
+
+.todo-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-2);
+  align-items: center;
+  padding: 12px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.todo-item__check {
+  width: 18px;
+  height: 18px;
+  border-radius: 6px;
+  border: 1px solid var(--color-border);
+  display: inline-block;
+  position: relative;
+}
+
+.todo-item__text {
+  margin: 0;
+  word-break: break-word;
+}
+
+.todo-item__actions {
+  display: flex;
+  gap: var(--space-1);
+}
+
+/* 완료 상태 */
+.todo-item--done .todo-item__check {
+  border-color: rgba(79, 140, 255, 0.8);
+  background: rgba(79, 140, 255, 0.25);
+}
+
+.todo-item--done .todo-item__text {
+  color: var(--color-muted);
+  text-decoration: line-through;
+}
+
+/* 빈 목록 안내 */
+.empty {
+  margin: var(--space-2) 0 0;
+  color: var(--color-muted);
+  font-size: 14px;
+}
