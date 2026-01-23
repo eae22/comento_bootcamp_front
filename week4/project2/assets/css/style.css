@@ -1,0 +1,199 @@
+/* 기본 초기화 */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* 공통 변수 */
+:root {
+  --bg: #0b0b0b;
+  --surface: #121212;
+  --border: #2a2a2a;
+  --text: #eaeaea;
+  --muted: #a8a8a8;
+  --primary: #4f8cff;
+  --danger: #ff5a5a;
+  --success: #49d17c;
+
+  --radius: 14px;
+
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+  --space-4: 20px;
+
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* 전체 레이아웃 */
+body {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.app {
+  width: min(720px, calc(100% - 32px));
+  margin: 40px auto;
+  display: grid;
+  gap: var(--space-4);
+}
+
+.app__header {
+  display: grid;
+  gap: 6px;
+}
+
+.app__title {
+  margin: 0;
+  font-size: 28px;
+}
+
+.app__subtitle {
+  margin: 0;
+  color: var(--muted);
+}
+
+/* 카드 */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+/* 폼 */
+.form {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.form__row {
+  display: grid;
+  grid-template-columns: 92px 1fr auto;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.form__label {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.form__input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  outline: none;
+}
+
+.form__input:focus {
+  border-color: rgba(79, 140, 255, 0.9);
+  box-shadow: 0 0 0 4px rgba(79, 140, 255, 0.15);
+}
+
+/* 힌트/메시지 */
+.hint {
+  margin: 0 0 var(--space-1);
+  min-height: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.hint--ok {
+  color: var(--success);
+}
+
+.hint--bad {
+  color: var(--danger);
+}
+
+.msg {
+  margin: 6px 0 0;
+  min-height: 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.msg--ok {
+  color: var(--success);
+}
+
+.msg--bad {
+  color: var(--danger);
+}
+
+/* 버튼 */
+.btn {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text);
+  padding: 10px 14px;
+  border-radius: 12px;
+}
+
+.btn--primary {
+  border-color: rgba(79, 140, 255, 0.55);
+  background: rgba(79, 140, 255, 0.18);
+}
+
+.form__actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.form__row--pw {
+  grid-template-columns: 92px 1fr;
+}
+
+.input-with-btn {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-2);
+  align-items: center;
+}
+
+.hint--rule {
+  margin: -6px 0 var(--space-1);
+  min-height: auto;
+  color: var(--muted);
+}
+
+/* 보기/숨기기 버튼 */
+.btn--ghost {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+}
+
+.btn--ghost[aria-pressed='true'] {
+  border-color: rgba(79, 140, 255, 0.55);
+  background: rgba(79, 140, 255, 0.12);
+}
